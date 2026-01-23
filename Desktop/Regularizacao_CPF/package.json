@@ -1,0 +1,70 @@
+{
+  "name": "brazilian-relax",
+  "version": "1.0.0",
+  "description": "Sistema de Regularização de CPF para Brasileiros no Exterior - Brazilian Relax",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 4000",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "db:push": "prisma db push",
+    "db:seed": "prisma db seed",
+    "setup": "npm install && npm run db:generate"
+  },
+  "keywords": [
+    "cpf",
+    "regularizacao",
+    "irpf",
+    "brasileiros-exterior",
+    "receita-federal"
+  ],
+  "author": "Bruno",
+  "license": "MIT",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.974.0",
+    "@aws-sdk/s3-request-presigner": "^3.974.0",
+    "@prisma/client": "^7.3.0",
+    "@types/nodemailer": "^7.0.5",
+    "axios": "^1.13.2",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.6",
+    "express-rate-limit": "^8.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "multer": "^2.0.2",
+    "next": "^14.2.0",
+    "node-cache": "^5.1.2",
+    "node-cron": "^4.2.1",
+    "nodemailer": "^7.0.12",
+    "prisma": "^7.3.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "stripe": "^20.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/node-cache": "^4.1.3",
+    "@types/node-cron": "^3.0.11",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.0",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.0",
+    "postcss": "^8.4.0",
+    "prettier": "^3.3.0",
+    "prettier-plugin-tailwindcss": "^0.6.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}

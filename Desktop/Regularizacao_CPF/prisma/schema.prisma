@@ -1,0 +1,178 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Cliente {
+  id                String    @id @default(cuid())
+  nomeCompleto      String
+  email             String    @unique
+  whatsapp          String
+  cpf               String    @unique
+  estado            String
+  situacaoCpf       String?   // regular, pendente, suspenso, cancelado, nao-sei
+  statusIrpf        String?   // em-dia, atrasado, preciso-retificar, nao-sei
+  dataResidenciaEua String?   // MM/YYYY
+  saidaDefinitiva   String?   // sim, nao, nao-sei
+  endereco          String?
+  observacoes       String?
+  lgpdConsent       Json?     // Consentimentos LGPD
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  processos         Processo[]
+  documentos        Documento[]
+  interacoes        Interacao[]
+  propostas         Proposta[]
+
+  @@map("clientes")
+}
+
+model Processo {
+  id                String    @id @default(cuid())
+  clienteId         String
+  tipo              String    // cpf, irpf, saida-definitiva
+  status            String    @default("pendente") // pendente, em-andamento, concluido, cancelado
+  descricao         String?
+  checklist         Json?     // Array de itens do checklist
+  etapas            Json?     // Array de etapas do processo
+  notas              String?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  cliente           Cliente   @relation(fields: [clienteId], references: [id], onDelete: Cascade)
+  eventos           Evento[]
+  documentos        Documento[]
+
+  @@map("processos")
+}
+
+model Evento {
+  id                String    @id @default(cuid())
+  processoId        String
+  tipo              String    // status-change, document-upload, note, etc
+  titulo            String
+  descricao         String?
+  data              DateTime  @default(now())
+  metadata          Json?
+
+  processo          Processo  @relation(fields: [processoId], references: [id], onDelete: Cascade)
+
+  @@map("eventos")
+}
+
+model Documento {
+  id                String    @id @default(cuid())
+  clienteId         String
+  processoId        String?
+  nome              String
+  tipo              String    // cpf, rg, comprovante, declaracao, etc
+  url               String
+  tamanho           Int?
+  mimeType          String?
+  versao            Int       @default(1)
+  createdAt         DateTime  @default(now())
+
+  cliente           Cliente   @relation(fields: [clienteId], references: [id], onDelete: Cascade)
+  processo          Processo? @relation(fields: [processoId], references: [id], onDelete: SetNull)
+
+  @@map("documentos")
+}
+
+model Interacao {
+  id                String    @id @default(cuid())
+  clienteId         String
+  tipo              String    // email, whatsapp, call, meeting
+  assunto           String
+  conteudo          String
+  direcao           String    @default("inbound") // inbound, outbound
+  createdAt         DateTime  @default(now())
+
+  cliente           Cliente   @relation(fields: [clienteId], references: [id], onDelete: Cascade)
+
+  @@map("interacoes")
+}
+
+model Proposta {
+  id                String    @id @default(cuid())
+  clienteId         String
+  tipo              String    // diagnostico, regularizacao, rotina-anual
+  valor             Decimal   @db.Decimal(10, 2)
+  descricao         String
+  status            String    @default("pendente") // pendente, aprovada, rejeitada, cancelada
+  aprovadaEm        DateTime?
+  assinadaEm        DateTime?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  cliente           Cliente   @relation(fields: [clienteId], references: [id], onDelete: Cascade)
+  pagamentos        Pagamento[]
+
+  @@map("propostas")
+}
+
+model Pagamento {
+  id                String    @id @default(cuid())
+  propostaId        String
+  valor             Decimal   @db.Decimal(10, 2)
+  status            String    @default("pendente") // pendente, processando, aprovado, recusado, reembolsado
+  metodo            String?   // stripe, paypal, etc
+  transactionId     String?
+  metadata          Json?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  proposta          Proposta  @relation(fields: [propostaId], references: [id], onDelete: Cascade)
+
+  @@map("pagamentos")
+}
+
+model Diagnostico {
+  id                String    @id @default(cuid())
+  clienteId         String?   // Pode ser anônimo inicialmente
+  email             String
+  nome              String?
+  whatsapp          String?
+  estado            String?
+  cpf               String?
+  situacaoCpf       String?
+  statusIrpf        String?
+  dataResidenciaEua String?
+  saidaDefinitiva   String?
+  resultado         Json?     // Resultado do diagnóstico automático
+  classificacao     String?   // cpf-irregular, ir-atrasado, saida-definitiva
+  createdAt         DateTime  @default(now())
+
+  @@map("diagnosticos")
+}
+
+model Auditoria {
+  id                String    @id @default(cuid())
+  usuarioId         String?
+  acao              String    // criar, atualizar, deletar, acesso_dados_sensiveis, etc
+  entidade          String    // Cliente, Processo, Documento, etc
+  entidadeId        String?
+  detalhes          Json?
+  ip                String?
+  createdAt         DateTime  @default(now())
+
+  @@map("auditoria")
+}
+
+model LeadMagnet {
+  id                String    @id @default(cuid())
+  email             String    @unique
+  nome              String?
+  material          String    // Nome do material (e.g., "Checklist CPF")
+  downloadUrl       String
+  dataDownload      DateTime?
+  createdAt         DateTime  @default(now())
+
+  @@map("lead_magnet")
+}

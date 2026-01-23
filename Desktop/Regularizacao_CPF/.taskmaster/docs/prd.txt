@@ -1,0 +1,432 @@
+# PRD - Sistema de Regularização de CPF para Brasileiros no Exterior
+
+## 1. Visão Geral do Projeto
+
+O sistema "Brazilian Relax" é uma plataforma completa de regularização fiscal para brasileiros residentes no exterior, focada em regularização de CPF e IRPF junto à Receita Federal do Brasil (RFB). O sistema oferece atendimento remoto, gestão de processos, comunicação integrada e acompanhamento completo do ciclo de vida do cliente.
+
+**Tagline**: "Relax — we fix your CPF and Brazil tax filings (IRPF) from the USA."
+
+**Slogan**: "P.S.: Regularize a sua vida com o Leão 🦁"
+
+## 2. Objetivos do Projeto
+
+### 2.1 Objetivos de Negócio
+- Facilitar regularização de CPF e IRPF para brasileiros no exterior
+- Automatizar processos de diagnóstico e acompanhamento
+- Criar fluxo de conversão otimizado (anúncio → WhatsApp → fechamento → recorrência)
+- Estabelecer recorrência anual com clientes (IRPF anual)
+- Expandir para principais estados dos EUA (FL, MA, NY/NJ, CA, TX, GA)
+
+### 2.2 Objetivos Técnicos
+- Criar plataforma web moderna e responsiva
+- Implementar integração com APIs da Receita Federal
+- Automatizar comunicação (WhatsApp, Email)
+- Criar sistema de gestão de clientes e processos
+- Implementar dashboard de acompanhamento
+- Garantir segurança e conformidade LGPD
+
+## 3. Público-Alvo
+
+### 3.1 Perfis Principais
+- Brasileiros residentes nos EUA (independente de status migratório)
+- CPF irregular, pendente, suspenso ou cancelado
+- IRPF em atraso (últimos 5 exercícios)
+- Necessidade de Saída Definitiva ou ajuste de residência fiscal
+- Necessidade de regularização para: trabalho, bancos, investimentos, remessas, compra/venda de imóveis, consulado
+
+### 3.2 Estados-Alvo (EUA)
+- **Prioritários**: Florida (Orlando, Miami, Tampa), Massachusetts (Boston, Framingham), New York/New Jersey (NYC, Newark), California (Los Angeles, Bay Area), Texas (Houston, Dallas), Georgia (Atlanta)
+- **Apoio**: Connecticut, Pennsylvania, Illinois
+
+## 4. Escopo do Projeto
+
+### 4.1 Módulos Principais
+
+#### 4.1.1 Módulo de Landing Page
+- Landing page otimizada para conversão
+- Formulário de pré-diagnóstico (6-9 perguntas)
+- Seções: Hero, Problema, Solução, Como Funciona, Para Quem É, Benefícios, Prova Social, FAQ, CTA
+- Integração com WhatsApp e formulário de contato
+- Lead magnet (checklist/guia gratuito)
+- SEO otimizado
+
+#### 4.1.2 Módulo de Gestão de Clientes (CRM)
+- Cadastro completo de clientes
+- Histórico de interações
+- Status do processo de regularização
+- Documentos e arquivos
+- Timeline de eventos
+- Notas e observações
+
+#### 4.1.3 Módulo de Diagnóstico e Processos
+- Sistema de diagnóstico automático baseado em formulário
+- Classificação de casos (CPF irregular, IR atrasado, Saída Definitiva)
+- Criação de processos de regularização
+- Checklist de documentos por tipo de caso
+- Acompanhamento de etapas
+- Status e prazos
+
+#### 4.1.4 Módulo de Integração com Receita Federal
+- Consulta de situação do CPF (via API ou scraping)
+- Verificação de pendências fiscais
+- Consulta de declarações de IRPF
+- Verificação de Saída Definitiva
+- Monitoramento de status
+
+#### 4.1.5 Módulo de Comunicação
+- Integração com WhatsApp Business API
+- Sequência de emails automatizada (5 disparos)
+- Templates de mensagens
+- Scripts de qualificação
+- Notificações de status
+- Lembretes de prazos
+
+#### 4.1.6 Módulo de Documentos
+- Upload seguro de documentos
+- Armazenamento criptografado
+- Organização por cliente e processo
+- Validação de documentos
+- Geração de procurações (quando necessário)
+- Download e compartilhamento seguro
+
+#### 4.1.7 Módulo de Propostas e Pagamentos
+- Geração de propostas personalizadas
+- 3 planos: Diagnóstico, Regularização (5 anos), Rotina Anual
+- Integração com gateway de pagamento
+- Gestão de contratos
+- Controle de pagamentos e faturas
+
+#### 4.1.8 Módulo de Dashboard e Relatórios
+- Dashboard administrativo
+- Métricas de conversão
+- Funil de vendas
+- Status de processos
+- Relatórios financeiros
+- Análise de performance
+
+#### 4.1.9 Módulo de Automação e Recorrência
+- Lembretes de prazo de IRPF (baseado em calendário RFB)
+- Sequência de onboarding
+- Follow-up automático
+- Renovação anual de contratos
+- Campanhas de retenção
+
+### 4.2 Funcionalidades Transversais
+
+#### 4.2.1 Autenticação e Segurança
+- Sistema de login seguro
+- Controle de acesso baseado em roles (admin, atendente, cliente)
+- Criptografia de dados sensíveis
+- Conformidade LGPD
+- Auditoria de acessos
+
+#### 4.2.2 Notificações
+- Notificações em tempo real
+- Email notifications
+- WhatsApp notifications
+- Notificações no dashboard
+
+#### 4.2.3 API e Integrações
+- RESTful API para integrações
+- Webhooks para eventos
+- Integração com ferramentas de marketing
+- Integração com sistemas de pagamento
+
+## 5. Requisitos Funcionais
+
+### 5.1 Landing Page
+
+#### 5.1.1 Hero Section
+- Headline principal (até 12 palavras)
+- Subheadline (até 2 linhas)
+- 3 bullets de valor
+- CTA primário (WhatsApp) + CTA secundário (Formulário)
+- Microcopy de confiança
+
+#### 5.1.2 Seções de Conteúdo
+- Identificação do problema (dor + contexto)
+- Explicação de "Situação Fiscal do CPF" (educação)
+- Proposta de solução (o serviço)
+- Como funciona (5-7 etapas)
+- Para quem é (6 perfis típicos)
+- Benefícios e diferenciais (8-10 bullets)
+- Prova social (depoimentos e casos)
+- FAQ (12-16 perguntas)
+- Oferta e CTA final
+
+#### 5.1.3 Formulário de Pré-Diagnóstico
+- Nome completo
+- WhatsApp (com DDI +1)
+- E-mail
+- Estado nos EUA
+- CPF (apenas números)
+- Situação do CPF (Regular/Pendente/Suspenso/Cancelado/Não sei)
+- Status do IRPF (Em dia/Atrasado/Preciso retificar/Não sei)
+- Desde quando mora nos EUA (mês/ano)
+- Saída Definitiva (Sim/Não/Não sei)
+- Checkbox LGPD
+
+#### 5.1.4 Lead Magnet
+- Checklist/Guia: "CPF irregular morando fora: o que fazer"
+- Campos: Nome, Email, WhatsApp, Estado
+- Entrega automática por email
+
+### 5.2 Sistema de Clientes (CRM)
+
+#### 5.2.1 Cadastro de Clientes
+- Dados pessoais completos
+- Endereço no exterior
+- CPF e situação atual
+- Histórico de IRPF
+- Status de Saída Definitiva
+- Documentos anexados
+- Histórico de interações
+
+#### 5.2.2 Gestão de Processos
+- Criação de processo por tipo (CPF, IRPF, Saída Definitiva)
+- Checklist de documentos
+- Etapas do processo
+- Status e prazos
+- Notas e observações
+- Timeline de eventos
+
+### 5.3 Integração com Receita Federal
+
+#### 5.3.1 Consulta de CPF
+- Verificação de situação cadastral
+- Verificação de situação fiscal
+- Identificação de pendências
+- Status: Regular, Pendente, Suspenso, Cancelado, Nulo
+
+#### 5.3.2 Consulta de IRPF
+- Verificação de declarações entregues
+- Identificação de exercícios em atraso
+- Status de processamento
+- Pendências e retificações necessárias
+
+#### 5.3.3 Saída Definitiva
+- Verificação de comunicação de saída
+- Status de processamento
+- Pendências relacionadas
+
+### 5.4 Sistema de Comunicação
+
+#### 5.4.1 WhatsApp Business API
+- Integração com WhatsApp Business
+- Templates de mensagens
+- Scripts de qualificação
+- Respostas automáticas
+- Notificações de status
+- Chat integrado no sistema
+
+#### 5.4.2 Email Marketing
+- Sequência de 5 emails automatizados:
+  - D0: "CPF irregular e IR atrasado: por onde começar"
+  - D2: "Residente, não residente e Saída Definitiva: entenda o básico"
+  - D4: "Checklist de documentos: organize em 10 minutos"
+  - D6: "Quanto tempo leva e quais são os próximos passos"
+  - D8: "Rotina anual: nunca mais perder prazo"
+- Templates personalizáveis
+- Segmentação por perfil
+
+### 5.5 Sistema de Documentos
+
+#### 5.5.1 Upload e Armazenamento
+- Upload seguro de documentos
+- Validação de tipos e tamanhos
+- Armazenamento criptografado
+- Organização por cliente/processo
+- Versionamento de documentos
+
+#### 5.5.2 Geração de Documentos
+- Geração de procurações (quando necessário)
+- Geração de relatórios
+- Geração de propostas
+- Templates personalizáveis
+
+### 5.6 Sistema de Propostas e Pagamentos
+
+#### 5.6.1 Planos de Serviço
+- **Plano 1 - Diagnóstico**: Verificação CPF + Mapa de pendências + Direcionamento
+- **Plano 2 - Regularização**: IRPF últimos 5 exercícios + Ajustes + Organização
+- **Plano 3 - Rotina Anual**: IRPF anual + Checklist + Monitoramento CPF
+
+#### 5.6.2 Gestão de Propostas
+- Geração de propostas personalizadas
+- Aprovação de propostas
+- Assinatura digital
+- Controle de contratos
+
+#### 5.6.3 Pagamentos
+- Integração com gateway (Stripe, PayPal, etc.)
+- Processamento de pagamentos
+- Gestão de faturas
+- Controle de inadimplência
+
+### 5.7 Dashboard e Relatórios
+
+#### 5.7.1 Dashboard Administrativo
+- Visão geral de clientes
+- Status de processos
+- Métricas de conversão
+- Funil de vendas
+- Receita e pagamentos
+- Tarefas pendentes
+
+#### 5.7.2 Dashboard do Cliente
+- Status do processo
+- Próximos passos
+- Documentos necessários
+- Timeline de eventos
+- Comunicações
+
+#### 5.7.3 Relatórios
+- Relatório de conversão
+- Relatório financeiro
+- Relatório de processos
+- Análise de performance
+
+### 5.8 Automações
+
+#### 5.8.1 Onboarding
+- Sequência automática de emails
+- Checklist de documentos
+- Lembretes de pendências
+
+#### 5.8.2 Recorrência
+- Lembretes de prazo de IRPF (baseado em calendário RFB)
+- Renovação de contratos anuais
+- Campanhas de retenção
+
+#### 5.8.3 Follow-up
+- Follow-up automático de processos
+- Lembretes de prazos
+- Notificações de mudanças de status
+
+## 6. Requisitos Não Funcionais
+
+### 6.1 Performance
+- Tempo de carregamento da landing page < 2 segundos
+- API response time < 500ms para 95% das requisições
+- Suportar pelo menos 1000 visitantes simultâneos na landing page
+
+### 6.2 Segurança
+- HTTPS obrigatório
+- Criptografia de dados sensíveis
+- Conformidade LGPD
+- Proteção contra SQL injection, XSS, CSRF
+- Rate limiting em APIs públicas
+- Backup automático diário
+
+### 6.3 Confiabilidade
+- Uptime de 99.9%
+- Sistema de backup e recuperação
+- Tratamento robusto de erros
+- Logging e monitoramento
+
+### 6.4 Escalabilidade
+- Arquitetura preparada para escalar horizontalmente
+- Processamento assíncrono para tarefas pesadas
+- Cache de consultas frequentes
+- CDN para assets estáticos
+
+### 6.5 Usabilidade
+- Interface intuitiva e responsiva
+- Acessibilidade (WCAG 2.1 AA)
+- Suporte a múltiplos idiomas (PT-BR, EN)
+- Design moderno e profissional
+
+## 7. Tecnologias e Ferramentas
+
+### 7.1 Frontend
+- React 18+ ou Next.js
+- TypeScript
+- Tailwind CSS
+- React Query / SWR
+- Framer Motion (animações)
+
+### 7.2 Backend
+- Node.js 20+
+- TypeScript
+- Express.js ou Fastify
+- PostgreSQL ou MySQL
+- Prisma ou TypeORM
+
+### 7.3 Integrações
+- WhatsApp Business API
+- Email service (SendGrid, Mailchimp, ou similar)
+- Gateway de pagamento (Stripe, PayPal)
+- APIs da Receita Federal (quando disponíveis)
+
+### 7.4 Infraestrutura
+- Hosting: Vercel, AWS, ou similar
+- Database: Supabase, AWS RDS, ou similar
+- Storage: AWS S3, Cloudflare R2, ou similar
+- CDN: Cloudflare ou similar
+
+### 7.5 Ferramentas de Desenvolvimento
+- Git / GitHub
+- Docker
+- CI/CD (GitHub Actions)
+- Monitoring (Sentry, LogRocket)
+
+## 8. Estrutura de Tarefas Sugerida
+
+### 8.1 Fase 1: Fundação e Landing Page
+- Setup do projeto e estrutura
+- Desenvolvimento da landing page
+- Formulário de pré-diagnóstico
+- Integração básica de comunicação
+
+### 8.2 Fase 2: Sistema de Clientes e CRM
+- Sistema de cadastro de clientes
+- Dashboard administrativo
+- Gestão de processos
+- Sistema de documentos
+
+### 8.3 Fase 3: Integrações e Automações
+- Integração com Receita Federal
+- Integração com WhatsApp
+- Sistema de emails automatizados
+- Automações de follow-up
+
+### 8.4 Fase 4: Propostas e Pagamentos
+- Sistema de propostas
+- Integração com gateway de pagamento
+- Gestão de contratos
+- Controle financeiro
+
+### 8.5 Fase 5: Dashboard e Relatórios
+- Dashboard do cliente
+- Relatórios administrativos
+- Métricas e analytics
+- Otimizações
+
+## 9. Critérios de Sucesso
+
+- Landing page com taxa de conversão > 3%
+- Tempo médio de resposta a leads < 1 hora
+- Taxa de fechamento > 20%
+- Taxa de retenção anual > 70%
+- NPS > 50
+- Sistema estável com uptime > 99.9%
+
+## 10. Riscos e Mitigações
+
+### 10.1 Riscos Técnicos
+- **APIs da Receita Federal instáveis**: Mitigação com fallback e cache
+- **Integração WhatsApp complexa**: Mitigação com testes extensivos e documentação
+- **Conformidade LGPD**: Mitigação com revisão legal e implementação rigorosa
+
+### 10.2 Riscos de Negócio
+- **Alta concorrência**: Mitigação com diferenciação e qualidade de serviço
+- **Mudanças na legislação**: Mitigação com monitoramento constante e adaptação rápida
+
+## 11. Próximos Passos
+
+1. Inicializar Task Master com este PRD
+2. Gerar tarefas iniciais baseadas neste documento
+3. Priorizar tarefas por impacto e esforço
+4. Começar implementação pela Fase 1 (Landing Page)
+5. Revisar e ajustar conforme necessário
+

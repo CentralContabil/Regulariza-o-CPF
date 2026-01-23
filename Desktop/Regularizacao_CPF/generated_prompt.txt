@@ -1,0 +1,118 @@
+<generated_prompt>
+  <goal>
+    Criar uma landing page altamente persuasiva, clara e orientada à conversão para um serviço especializado em regularização da Situação Fiscal do CPF, direcionada a brasileiros que residem no exterior e precisam normalizar o CPF junto à Receita Federal para fins de trabalho, bancos, investimentos, declaração de IR, envio de remessas, compra e venda de bens, consulado e demais exigências legais.
+  </goal>
+
+  <return_format>
+    Fornecer a entrega completa da landing page em português (Brasil), com linguagem profissional, objetiva e acessível, sem promessas absolutas e sem jargões excessivos. Estruturar o conteúdo com títulos e subtítulos prontos para serem colados em um construtor de páginas (ex.: Webflow, WordPress, Elementor).
+    
+    A resposta deve conter, obrigatoriamente, as seções abaixo, na ordem:
+
+    1) Acima da dobra (Hero)
+       - Headline principal (até 12 palavras)
+       - Subheadline (até 2 linhas)
+       - 3 bullets de valor (benefícios claros)
+       - CTA primário (texto do botão) + CTA secundário (texto alternativo)
+       - Microcopy de confiança abaixo do CTA (1 linha)
+
+    2) Identificação do problema (Dor + contexto do exterior)
+       - Texto curto mostrando situações reais de quem mora fora
+       - Lista de 6 a 8 consequências comuns de CPF irregular
+
+    3) Explicação do que é “Situação Fiscal do CPF” (educação)
+       - Definição simples
+       - Principais status e o que significam (ex.: regular, pendente de regularização, suspenso, cancelado, nulo)
+       - Observação sobre causas comuns para residentes no exterior
+
+    4) Proposta de solução (O serviço)
+       - O que a consultoria faz (escopo)
+       - O que o cliente recebe (entregáveis)
+       - Prazos estimados em termos de etapas (sem garantir tempo fixo)
+
+    5) Como funciona (Passo a passo)
+       - 5 a 7 etapas do atendimento remoto (WhatsApp/Zoom/e-mail)
+       - O que é necessário do cliente em cada etapa
+
+    6) Para quem é (Segmentação)
+       - 6 perfis típicos (ex.: estudantes, trabalhadores, investidores, quem vai voltar ao Brasil, quem precisa abrir conta, quem vendeu/comprou imóvel)
+
+    7) Benefícios e diferenciais
+       - 8 a 10 bullets de diferenciais (clareza, rastreabilidade, documentação, orientação, segurança, atendimento em fuso, etc.)
+       - Incluir um bloco “Evite erros comuns” com 5 erros
+
+    8) Prova social (modelos prontos)
+       - 6 depoimentos fictícios marcados como “exemplo de depoimento” (não inventar nomes reais; usar iniciais e país)
+       - 3 mini casos (problema → ação → resultado) sem números absolutos
+
+    9) FAQ (perguntas frequentes)
+       - 12 a 16 perguntas com respostas objetivas
+       - Incluir perguntas sobre: fuso horário, atendimento remoto, documentos, procuração (se aplicável), impacto em banco, declaração de IR, dependentes, e segurança de dados
+
+    10) Oferta e CTA final
+       - Reforço de benefícios
+       - CTA forte e específico
+       - Alternativa para quem “ainda não está pronto” (captura de lead: checklist/guia)
+
+    11) Captura de lead (Lead magnet)
+       - Título do material
+       - Descrição do que inclui (5 a 7 itens)
+       - Campos sugeridos do formulário
+       - Mensagem pós-cadastro
+
+    12) Rodapé com confiança e conformidade
+       - Aviso de transparência: não é órgão público; prestação de serviço/consultoria
+       - Política de privacidade (texto curto)
+       - Aviso LGPD (texto curto)
+       - Canais de contato e horários (genéricos)
+
+    Extras obrigatórios:
+    - 10 variações de headline (A/B)
+    - 10 variações de CTA
+    - Palavras-chave/termos para SEO (15 a 25)
+    - Meta title e meta description (até 60 e 160 caracteres, respectivamente)
+    - Tom de voz: “especialista que simplifica”, com empatia para quem está fora do Brasil
+    - Incluir chamadas específicas para WhatsApp e formulário, sem links reais (usar placeholders)
+
+    Formatação:
+    - Entregar tudo em texto corrido com headings (H1, H2, H3) e listas com marcadores
+    - Não incluir emojis
+  </return_format>
+
+  <warnings>
+    - Não prometer regularização “garantida”, “imediata” ou “em X dias”, pois prazos e deferimentos podem variar conforme análise e sistemas oficiais.
+    - Evitar linguagem que simule vínculo com a Receita Federal ou com qualquer órgão público; deixar claro que é um serviço privado de orientação/assessoria/consultoria.
+    - Não solicitar nem expor dados sensíveis na própria página (ex.: CPF completo, senha gov.br, dados bancários). Recomendar envio seguro em canal apropriado após contato.
+    - Escrever com foco em conformidade e segurança: LGPD, confidencialidade e boas práticas.
+    - Incluir isenções de responsabilidade apropriadas: a orientação depende das informações fornecidas pelo cliente e das regras vigentes.
+    - Evitar termos técnicos sem explicação; quando usar, explicar em linguagem simples.
+    - Manter consistência com o público-alvo: brasileiros no exterior, diferenças de fuso, dificuldade de acesso a serviços no Brasil e necessidade de atendimento remoto.
+  </warnings>
+
+  <context_dump>
+    Público-alvo:
+    - Brasileiros residentes no exterior que descobriram que o CPF está com pendência/irregularidade e precisam regularizar para: abrir/reativar conta em banco e corretora, receber herança, comprar/vender imóvel, obter financiamento, declarar Imposto de Renda, movimentar investimentos, enviar remessas, atualizar cadastro em plataformas e serviços, processos consulares ou retorno ao Brasil.
+    
+    Obstáculos típicos:
+    - Dificuldade de entender o motivo da irregularidade à distância
+    - Falta de tempo e fuso horário
+    - Medo de golpes e insegurança ao compartilhar documentos
+    - Falta de clareza sobre etapas e documentos
+    - Confusão entre “situação cadastral” e “situação fiscal” e quais ações resolvem cada caso
+    
+    Proposta de valor desejada:
+    - Atendimento remoto, organizado por etapas
+    - Diagnóstico claro do status e das causas prováveis
+    - Orientação documental e operacional
+    - Acompanhamento do processo e comunicação simples
+    - Prioridade para segurança da informação e conformidade legal
+    
+    Posicionamento:
+    - Especialista em Situação Fiscal e regularização do CPF para residentes no exterior
+    - Linguagem: direta, empática, sem exageros; foco em clareza, segurança e previsibilidade de etapas
+    
+    Conversão:
+    - CTA principal: “Falar com um especialista” (WhatsApp)
+    - CTA secundário: “Quero um diagnóstico” (formulário)
+    - Lead magnet: checklist/guia “CPF irregular morando fora: o que fazer”
+  </context_dump>
+</generated_prompt>

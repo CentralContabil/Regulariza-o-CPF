@@ -1,0 +1,186 @@
+Brazilian Relax
+Tagline: “Relax — we fix your CPF and Brazil tax filings (IRPF) from the USA.”
+
+MODELO DE COMUNICAÇÃO ONLINE — BRASILEIROS NOS EUA (STATUS MIGRATÓRIO IRRELEVANTE)
+Objetivo: Regularização fiscal perante a Receita Federal do Brasil (RFB)
+Serviços: Regularizar CPF + Entrada/Saída do País (fiscal) + Entrega/Retificações IRPF (últimos 5 exercícios) + Rotina anual no prazo
+Slogan: “P.S.: Regularize a sua vida com o Leão 🦁”
+
+=====================================================================
+1) MENSAGEM-MÃE (POSICIONAMENTO)
+=====================================================================
+Promessa central:
+- “Regularize seu CPF e seu Imposto de Renda no Brasil, mesmo morando nos EUA.”
+
+O que resolve (em 1 linha):
+- CPF pendente/irregular/suspenso
+- IRPF em atraso (últimos 5 exercícios): entrega e/ou retificação
+- Saída Definitiva (quando aplicável) e sequência anual no prazo oficial
+
+Tom:
+- Acolhedor, sem julgamento, com segurança e sigilo.
+- “A gente cuida da sua vida fiscal no Brasil com orientação técnica e processo passo a passo.”
+
+=====================================================================
+2) ESTADOS-ALVO (CONCENTRAÇÃO DE BRASILEIROS) + CHAMADAS LOCAIS
+=====================================================================
+Estados prioritários:
+- Florida (FL): Orlando, Miami, Tampa
+- Massachusetts (MA): Boston, Framingham e região
+- New York / New Jersey (NY/NJ): NYC, Newark, Ironbound
+- California (CA): Los Angeles, Bay Area
+- Texas (TX): Houston, Dallas
+- Georgia (GA): Atlanta
+- Apoio: Connecticut (CT), Pennsylvania (PA), Illinois (IL)
+
+Frase “local” para usar em anúncios/copy:
+- “Atendimento online para brasileiros na Flórida, MA, NY/NJ e todo os EUA.”
+
+=====================================================================
+3) FUNIL (ANÚNCIO → WHATSAPP/DM → FECHAMENTO → RECORRÊNCIA ANUAL)
+=====================================================================
+A) Atração (Anúncios + Conteúdo)
+Objetivo: dor + urgência + clareza
+Temas com boa performance:
+- “CPF irregular te trava no Brasil”
+- “Você mora fora e o IR ficou para trás?”
+- “Saída Definitiva: você fez do jeito certo?”
+- “Evite dor de cabeça com pendência na Receita”
+
+B) Conversão (Landing + WhatsApp)
+Objetivo: virar conversa qualificada
+CTA principal:
+- “Faça um pré-diagnóstico gratuito em 2 minutos” (form simples)
+
+C) Onboarding (Checklist + Proposta)
+Objetivo: organizar docs e fechar
+- checklist curto
+- proposta com 2–3 planos
+- cronograma de entrega
+
+D) Retenção (Anualidade IRPF)
+Objetivo: cliente recorrente
+- lembrete de prazo oficial (divulgado pela RFB)
+- pacote “IR anual + monitoramento CPF”
+
+=====================================================================
+4) OFERTAS E PACOTES (ESTRUTURA COMERCIAL)
+=====================================================================
+Plano 1 — Diagnóstico CPF + Direcionamento (Entrada)
+- Verificação da situação do CPF
+- Mapa de pendências fiscais
+- Definição do caminho: residente no Brasil x não residente x saída definitiva (conforme o caso)
+
+Plano 2 — Regularização (Últimos 5 Exercícios)
+- Entrega e/ou retificação do IRPF dos últimos 5 exercícios
+- Ajustes conforme cada caso (ex.: rendimentos no exterior, bens, etc.)
+- Organização do “dossiê” do contribuinte
+
+Plano 3 — Rotina Anual (Recorrência)
+- IRPF anual dentro do prazo oficial divulgado pela RFB
+- Checklist anual + lembretes
+- Suporte para manutenção do CPF regular
+
+=====================================================================
+5) LANDING PAGE (MODELO DE ESTRUTURA)
+=====================================================================
+Topo (headline):
+- “Regularize seu CPF e seu IRPF no Brasil morando nos EUA”
+
+Subheadline:
+- “Entrega/retificação dos últimos 5 exercícios, orientação de Saída Definitiva (quando aplicável) e rotina anual no prazo.”
+
+Blocos essenciais:
+1) Para quem é:
+   - CPF irregular/pendente
+   - IRPF atrasado
+   - Mudou para os EUA e ficou inseguro com “Saída Definitiva”
+2) O que fazemos (bullets):
+   - Regularização cadastral do CPF (RFB)
+   - Declarações e retificações dos últimos 5 exercícios
+   - Orientação de residência fiscal / saída definitiva (conforme o caso)
+   - Acompanhamento anual
+3) Como funciona (3 passos):
+   - Pré-diagnóstico
+   - Checklist de documentos
+   - Execução + entrega final
+4) Confiança:
+   - atendimento online
+   - sigilo e tratamento seguro de dados
+5) CTA:
+   - “Quero meu pré-diagnóstico” (WhatsApp + formulário)
+
+=====================================================================
+6) Formulário 
+=====================================================================
+FASE 1 — FORMULÁRIO DA LANDING (6 a 9 perguntas)
+
+Objetivo: captar lead + identificar o tipo de caso (CPF, IR atrasado, saída definitiva) sem cansar.
+
+Nome completo
+
+WhatsApp (com DDI +1)
+
+E-mail
+
+Onde você mora nos EUA? (Estado: FL, MA, NY, NJ, CA, TX, GA, outro)
+
+CPF (apenas números)
+
+Você sabe a situação do seu CPF?
+
+Regular / Pendente / Suspenso / Cancelado / Não sei
+
+Imposto de Renda: como está?
+
+Em dia / Atrasado / Preciso retificar / Não sei
+
+Desde quando você mora nos EUA? (mês/ano)
+
+Você fez Saída Definitiva do Brasil?
+
+Sim / Não / Não sei
+
+CTA final (mensagem):
+“Enviando isso, você recebe um retorno com o caminho provável do seu caso e próximos passos.”
+(checkbox LGPD)
+=====================================================================
+7) SCRIPT WHATSAPP (PRIMEIRO CONTATO + QUALIFICAÇÃO)
+=====================================================================
+Mensagem 1 — Boas-vindas:
+“Olá! 👋 Eu vou te ajudar com sua regularização fiscal no Brasil.
+Para eu te direcionar corretamente, me responda rapidinho:
+
+1) Seu CPF está regular, pendente, irregular ou suspenso?
+2) Você entregou IRPF nos últimos anos? (sim/não/não sei)
+3) Você mora nos EUA desde quando?
+4) Você chegou a fazer Comunicação/Declaração de Saída Definitiva? (sim/não/não sei)
+
+Com essas respostas eu já te passo o caminho e o checklist.
+P.S.: Regularize a sua vida com o Leão 🦁”
+
+Mensagem 2 — Encaminhamento (após respostas):
+“Perfeito. Pelo que você descreveu, o caminho provável é:
+- ( ) Regularização cadastral do CPF
+- ( ) IRPF dos últimos 5 exercícios: entrega/retificação
+- ( ) Ajuste de residência fiscal/saída definitiva (se aplicável)
+
+Vou te enviar um checklist simples e, se você quiser, agendamos uma call rápida para fechar o plano e o cronograma.”
+
+=====================================================================
+9) SEQUÊNCIA DE E-MAILS (5 DISPAROS — TÍTULOS)
+=====================================================================
+Email 1 (D0): “CPF irregular e IR atrasado: por onde começar”
+Email 2 (D2): “Residente, não residente e Saída Definitiva: entenda o básico”
+Email 3 (D4): “Checklist de documentos: organize em 10 minutos”
+Email 4 (D6): “Quanto tempo leva e quais são os próximos passos”
+Email 5 (D8): “Rotina anual: nunca mais perder prazo”
+
+=====================================================================
+10) NOTAS DE POSICIONAMENTO (SEGURANÇA E CLAREZA)
+=====================================================================
+- Pode comunicar “independente do status migratório” (sem entrar em temas de imigração nos EUA).
+- Reforçar sempre: “atendimento fiscal brasileiro — Receita Federal do Brasil (RFB)”.
+- Linha de confiança recomendada: “sigilo e proteção de dados”.
+
+FIM
