@@ -1,114 +1,140 @@
+'use client'
+
+import AnimatedSection from './AnimatedSection'
+import { motion } from 'framer-motion'
+
 export default function SolutionSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-50 to-white">
-      <div className="container-custom">
+    <section className="py-20 lg:py-32 gradient-green-light relative overflow-hidden">
+      {/* Background decorativo */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-300 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-300 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900">
-            Como podemos ajudar você
-          </h2>
-          <p className="text-xl text-center text-gray-600 mb-12">
-            Um serviço completo de regularização fiscal, feito especialmente
-            para brasileiros que moram nos Estados Unidos
-          </p>
+          <AnimatedSection direction="down" delay={0.2}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-center mb-6 text-gray-900">
+              Como podemos{' '}
+              <span className="text-primary-600">ajudar você</span>
+            </h2>
+          </AnimatedSection>
+
+          <AnimatedSection direction="up" delay={0.4}>
+            <p className="text-xl md:text-2xl text-center text-gray-600 mb-12 leading-relaxed">
+              Um serviço completo de regularização fiscal, feito especialmente
+              para brasileiros que moram nos Estados Unidos
+            </p>
+          </AnimatedSection>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
-                O que fazemos
-              </h3>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-primary-600 mr-3 text-xl">✓</span>
-                  <span>
-                    Regularização cadastral do CPF junto à Receita Federal
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary-600 mr-3 text-xl">✓</span>
-                  <span>
-                    Entrega e/ou retificação do IRPF dos últimos 5 exercícios
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary-600 mr-3 text-xl">✓</span>
-                  <span>
-                    Orientação sobre residência fiscal e Saída Definitiva
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary-600 mr-3 text-xl">✓</span>
-                  <span>
-                    Acompanhamento anual para manter tudo em dia
-                  </span>
-                </li>
-              </ul>
-            </div>
+            <AnimatedSection direction="left" delay={0.6}>
+              <motion.div
+                className="card-modern bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
+                whileHover={{ y: -5 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <h3 className="text-2xl md:text-3xl font-display font-semibold mb-6 text-gray-900">
+                  O que fazemos
+                </h3>
+                <ul className="space-y-4">
+                  {[
+                    'Regularização cadastral do CPF junto à Receita Federal',
+                    'Entrega e/ou retificação do IRPF dos últimos 5 exercícios',
+                    'Orientação sobre residência fiscal e Saída Definitiva',
+                    'Acompanhamento anual para manter tudo em dia',
+                  ].map((item, index) => (
+                    <motion.li
+                      key={index}
+                      className="flex items-start"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <span className="text-primary-600 mr-4 text-2xl font-bold flex-shrink-0">
+                        ✓
+                      </span>
+                      <span className="text-gray-700 text-lg leading-relaxed">{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            </AnimatedSection>
 
-            <div className="bg-white rounded-lg shadow-lg p-8">
-              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
-                O que você recebe
-              </h3>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-primary-600 mr-3 text-xl">✓</span>
-                  <span>Diagnóstico completo da sua situação fiscal</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary-600 mr-3 text-xl">✓</span>
-                  <span>Checklist personalizado de documentos</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary-600 mr-3 text-xl">✓</span>
-                  <span>Orientação passo a passo do processo</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary-600 mr-3 text-xl">✓</span>
-                  <span>Suporte durante todo o processo</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-primary-600 mr-3 text-xl">✓</span>
-                  <span>Documentação completa e organizada</span>
-                </li>
-              </ul>
-            </div>
+            <AnimatedSection direction="right" delay={0.6}>
+              <motion.div
+                className="card-modern bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
+                whileHover={{ y: -5 }}
+                transition={{ type: 'spring', stiffness: 300 }}
+              >
+                <h3 className="text-2xl md:text-3xl font-display font-semibold mb-6 text-gray-900">
+                  O que você recebe
+                </h3>
+                <ul className="space-y-4">
+                  {[
+                    'Diagnóstico completo da sua situação fiscal',
+                    'Checklist personalizado de documentos',
+                    'Orientação passo a passo do processo',
+                    'Suporte durante todo o processo',
+                    'Documentação completa e organizada',
+                  ].map((item, index) => (
+                    <motion.li
+                      key={index}
+                      className="flex items-start"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <span className="text-primary-600 mr-4 text-2xl font-bold flex-shrink-0">
+                        ✓
+                      </span>
+                      <span className="text-gray-700 text-lg leading-relaxed">{item}</span>
+                    </motion.li>
+                  ))}
+                </ul>
+              </motion.div>
+            </AnimatedSection>
           </div>
 
-          <div className="bg-primary-600 text-white rounded-lg p-8 text-center">
-            <h3 className="text-2xl font-semibold mb-4">
-              Processo em etapas claras
-            </h3>
-            <p className="text-lg mb-6">
-              Não garantimos prazos fixos (pois dependem da análise da Receita
-              Federal), mas organizamos tudo em etapas claras para você
-              acompanhar cada passo do processo.
-            </p>
-            <div className="grid md:grid-cols-3 gap-6 text-left">
-              <div>
-                <div className="text-3xl mb-2">1️⃣</div>
-                <h4 className="font-semibold mb-2">Diagnóstico</h4>
-                <p className="text-primary-100 text-sm">
-                  Análise completa da sua situação
-                </p>
+          <AnimatedSection direction="up" delay={0.8}>
+            <motion.div
+              className="gradient-green text-white rounded-3xl p-8 md:p-12 text-center shadow-2xl"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 300 }}
+            >
+              <h3 className="text-2xl md:text-3xl font-display font-semibold mb-6">
+                Processo em etapas claras
+              </h3>
+              <p className="text-lg md:text-xl mb-8 text-primary-100 leading-relaxed">
+                Não garantimos prazos fixos (pois dependem da análise da Receita
+                Federal), mas organizamos tudo em etapas claras para você
+                acompanhar cada passo do processo.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 text-left">
+                {[
+                  { icon: '1️⃣', title: 'Diagnóstico', desc: 'Análise completa da sua situação' },
+                  { icon: '2️⃣', title: 'Organização', desc: 'Coleta e organização de documentos' },
+                  { icon: '3️⃣', title: 'Regularização', desc: 'Entrega e acompanhamento na RFB' },
+                ].map((step, index) => (
+                  <motion.div
+                    key={index}
+                    className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    transition={{ type: 'spring', stiffness: 300 }}
+                  >
+                    <div className="text-4xl mb-3">{step.icon}</div>
+                    <h4 className="font-display font-semibold mb-2 text-lg">{step.title}</h4>
+                    <p className="text-primary-100 text-sm leading-relaxed">{step.desc}</p>
+                  </motion.div>
+                ))}
               </div>
-              <div>
-                <div className="text-3xl mb-2">2️⃣</div>
-                <h4 className="font-semibold mb-2">Organização</h4>
-                <p className="text-primary-100 text-sm">
-                  Coleta e organização de documentos
-                </p>
-              </div>
-              <div>
-                <div className="text-3xl mb-2">3️⃣</div>
-                <h4 className="font-semibold mb-2">Regularização</h4>
-                <p className="text-primary-100 text-sm">
-                  Entrega e acompanhamento na RFB
-                </p>
-              </div>
-            </div>
-          </div>
+            </motion.div>
+          </AnimatedSection>
         </div>
       </div>
     </section>
   )
 }
-

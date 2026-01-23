@@ -1,3 +1,8 @@
+'use client'
+
+import AnimatedSection from './AnimatedSection'
+import { motion } from 'framer-motion'
+
 export default function HowItWorksSection() {
   const steps = [
     {
@@ -52,38 +57,58 @@ export default function HowItWorksSection() {
   ]
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container-custom">
+    <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
+      {/* Background decorativo */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-300 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-6 text-gray-900">
-            Como funciona o atendimento
-          </h2>
-          <p className="text-xl text-center text-gray-600 mb-12">
-            Tudo feito remotamente, via WhatsApp, Zoom ou e-mail. Você não
-            precisa sair de casa.
-          </p>
+          <AnimatedSection direction="down" delay={0.2}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-center mb-6 text-gray-900">
+              Como funciona o{' '}
+              <span className="text-primary-600">atendimento</span>
+            </h2>
+          </AnimatedSection>
+
+          <AnimatedSection direction="up" delay={0.4}>
+            <p className="text-xl md:text-2xl text-center text-gray-600 mb-12 leading-relaxed">
+              Tudo feito remotamente, via WhatsApp, Zoom ou e-mail. Você não
+              precisa sair de casa.
+            </p>
+          </AnimatedSection>
 
           <div className="space-y-6">
-            {steps.map((item) => (
-              <div
-                key={item.step}
-                className="bg-gray-50 rounded-lg p-6 border-l-4 border-primary-500"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
-                    {item.step}
+            {steps.map((item, index) => (
+              <AnimatedSection key={item.step} direction="left" delay={0.1 * index}>
+                <motion.div
+                  className="card-modern bg-gradient-to-r from-white to-gray-50 rounded-2xl p-6 md:p-8 border-l-4 border-primary-500 shadow-lg"
+                  whileHover={{ x: 10, scale: 1.02 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
+                  <div className="flex items-start gap-6">
+                    <motion.div
+                      className="flex-shrink-0 w-14 h-14 gradient-green text-white rounded-full flex items-center justify-center font-display font-bold text-xl shadow-lg"
+                      whileHover={{ rotate: 360, scale: 1.1 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      {item.step}
+                    </motion.div>
+                    <div className="flex-grow">
+                      <h3 className="text-xl md:text-2xl font-display font-semibold mb-3 text-gray-900">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-700 mb-4 text-lg leading-relaxed">
+                        {item.description}
+                      </p>
+                      <p className="text-sm text-primary-700 bg-primary-50 px-4 py-2 rounded-lg inline-block font-medium border border-primary-200">
+                        <strong>Você precisa:</strong> {item.clientNeeds}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex-grow">
-                    <h3 className="text-xl font-semibold mb-2 text-gray-900">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-700 mb-3">{item.description}</p>
-                    <p className="text-sm text-gray-600 bg-white px-3 py-2 rounded inline-block">
-                      <strong>Você precisa:</strong> {item.clientNeeds}
-                    </p>
-                  </div>
-                </div>
-              </div>
+                </motion.div>
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -91,4 +116,3 @@ export default function HowItWorksSection() {
     </section>
   )
 }
-

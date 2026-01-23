@@ -1,3 +1,5 @@
+'use client'
+
 import Hero from '@/components/Hero'
 import ProblemSection from '@/components/ProblemSection'
 import EducationSection from '@/components/EducationSection'
@@ -10,18 +12,25 @@ import FAQSection from '@/components/FAQSection'
 import FinalCTASection from '@/components/FinalCTASection'
 import PreDiagnosticoForm from '@/components/PreDiagnosticoForm'
 import Footer from '@/components/Footer'
+import ParallaxSection from '@/components/ParallaxSection'
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen overflow-x-hidden">
       <Hero />
-      <ProblemSection />
+      <ParallaxSection speed={0.2}>
+        <ProblemSection />
+      </ParallaxSection>
       <EducationSection />
-      <SolutionSection />
+      <ParallaxSection speed={0.15}>
+        <SolutionSection />
+      </ParallaxSection>
       <HowItWorksSection />
       <TargetAudienceSection />
       <BenefitsSection />
-      <SocialProofSection />
+      <ParallaxSection speed={0.1}>
+        <SocialProofSection />
+      </ParallaxSection>
       <FAQSection />
       <FinalCTASection />
       <PreDiagnosticoForm />

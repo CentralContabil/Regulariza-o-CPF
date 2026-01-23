@@ -199,15 +199,15 @@ export default function PreDiagnosticoForm() {
     <section id="formulario" className="py-20 bg-gray-50">
       <div className="container-custom">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900">
-            Faça seu pré-diagnóstico gratuito
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-center mb-4 text-gray-900">
+            Faça seu <span className="text-primary-600">pré-diagnóstico gratuito</span>
           </h2>
-          <p className="text-center text-gray-600 mb-8">
+          <p className="text-center text-gray-600 mb-8 text-lg leading-relaxed">
             Preencha o formulário abaixo e receba um diagnóstico inicial da sua
             situação fiscal
           </p>
 
-          <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-8">
+          <form onSubmit={handleSubmit} className="card-modern bg-white rounded-2xl shadow-xl p-8 md:p-10 border border-gray-100">
             {/* Nome Completo */}
             <div className="mb-6">
               <label htmlFor="nomeCompleto" className="block text-sm font-medium text-gray-700 mb-2">
@@ -219,7 +219,7 @@ export default function PreDiagnosticoForm() {
                 name="nomeCompleto"
                 value={formData.nomeCompleto}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all ${
                   errors.nomeCompleto ? 'border-red-500' : 'border-gray-300'
                 }`}
                 required
@@ -241,7 +241,7 @@ export default function PreDiagnosticoForm() {
                 value={formData.whatsapp}
                 onChange={handleChange}
                 placeholder="+1 (555) 123-4567"
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all ${
                   errors.whatsapp ? 'border-red-500' : 'border-gray-300'
                 }`}
                 required
@@ -262,7 +262,7 @@ export default function PreDiagnosticoForm() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all ${
                   errors.email ? 'border-red-500' : 'border-gray-300'
                 }`}
                 required
@@ -282,7 +282,7 @@ export default function PreDiagnosticoForm() {
                 name="estado"
                 value={formData.estado}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all ${
                   errors.estado ? 'border-red-500' : 'border-gray-300'
                 }`}
                 required
@@ -315,7 +315,7 @@ export default function PreDiagnosticoForm() {
                 }}
                 placeholder="00000000000"
                 maxLength={11}
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all ${
                   errors.cpf ? 'border-red-500' : 'border-gray-300'
                 }`}
                 required
@@ -392,7 +392,7 @@ export default function PreDiagnosticoForm() {
                 value={formData.dataResidenciaEua}
                 onChange={handleChange}
                 placeholder="MM/YYYY (ex: 01/2020)"
-                className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent ${
+                className={`w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all ${
                   errors.dataResidenciaEua ? 'border-red-500' : 'border-gray-300'
                 }`}
               />
@@ -458,7 +458,7 @@ export default function PreDiagnosticoForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-primary-600 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-primary-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full btn-primary py-4 px-6 font-display font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
               {isSubmitting ? 'Enviando...' : 'Enviar pré-diagnóstico'}
             </button>
