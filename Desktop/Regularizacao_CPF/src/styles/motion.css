@@ -1,0 +1,415 @@
+/* ============================================
+   Motion System - Variáveis e Configurações
+   ============================================ */
+
+:root {
+  /* Durações - Desktop (mais suaves) */
+  --dur-1: 0.6s;
+  --dur-2: 0.9s;
+  --dur-3: 1.2s;
+  
+  /* Easing - Mais suaves e naturais */
+  --ease-1: cubic-bezier(0.25, 0.46, 0.45, 0.94); /* easeOutQuad - mais suave */
+  --ease-2: cubic-bezier(0.16, 1, 0.3, 1); /* easeOutExpo - muito suave */
+  --ease-3: cubic-bezier(0.19, 1, 0.22, 1); /* easeOutCubic - extremamente suave */
+  
+  /* Distância de revelação - Desktop (reduzida para mais suavidade) */
+  --reveal-distance: 30px;
+  
+  /* Delay para stagger - Desktop */
+  --stagger-delay: 0.08s;
+  
+  /* Delay para stagger */
+  --i: 0;
+}
+
+/* ============================================
+   Responsividade - Tablet (768px - 1024px)
+   ============================================ */
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  :root {
+    --dur-1: 0.5s;
+    --dur-2: 0.75s;
+    --dur-3: 1s;
+    --reveal-distance: 25px;
+    --stagger-delay: 0.06s;
+  }
+}
+
+/* ============================================
+   Responsividade - Mobile (até 768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+  :root {
+    /* Durações balanceadas para mobile */
+    --dur-1: 0.4s;
+    --dur-2: 0.6s;
+    --dur-3: 0.8s;
+    
+    /* Distâncias menores para telas pequenas */
+    --reveal-distance: 20px;
+    
+    /* Delay menor para stagger em mobile */
+    --stagger-delay: 0.05s;
+  }
+  
+  /* Reduzir will-change em mobile para economizar recursos */
+  [data-reveal] {
+    will-change: opacity;
+  }
+  
+  /* Simplificar animações em mobile - menos transformações */
+  [data-reveal="left"],
+  [data-reveal="right"] {
+    /* Em mobile, left/right podem ser apenas fade */
+    transform: none;
+    transition: opacity var(--dur-2) var(--ease-1);
+  }
+  
+  [data-reveal="left"].is-inview,
+  [data-reveal="right"].is-inview {
+    transform: none;
+  }
+  
+  [data-reveal="left"].is-outview,
+  [data-reveal="right"].is-outview {
+    transform: none;
+  }
+}
+
+/* ============================================
+   Responsividade - Mobile Pequeno (até 480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+  :root {
+    /* Durações ainda mais rápidas */
+    --dur-1: 0.25s;
+    --dur-2: 0.35s;
+    --dur-3: 0.45s;
+    
+    /* Distâncias mínimas */
+    --reveal-distance: 15px;
+    --stagger-delay: 0.03s;
+  }
+  
+  /* Desabilitar zoom em telas muito pequenas */
+  [data-reveal="zoom"] {
+    transform: none;
+    transition: opacity var(--dur-2) var(--ease-1);
+  }
+  
+  [data-reveal="zoom"].is-inview {
+    transform: none;
+  }
+}
+
+/* ============================================
+   Reduced Motion - Fallback
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-1: 0.01s;
+    --dur-2: 0.01s;
+    --dur-3: 0.01s;
+    --reveal-distance: 0px;
+  }
+  
+  [data-parallax] {
+    transform: none !important;
+  }
+}
+
+/* ============================================
+   Estados Base - Oculto por padrão
+   ============================================ */
+
+[data-reveal] {
+  opacity: 0;
+  will-change: opacity, transform;
+  /* Suavizar transições durante scroll */
+  transition-timing-function: var(--ease-2);
+  /* Melhorar performance durante scroll */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ============================================
+   Reveal Fade
+   ============================================ */
+
+[data-reveal="fade"] {
+  transition: opacity var(--dur-2) var(--ease-2);
+}
+
+[data-reveal="fade"].is-inview {
+  opacity: 1;
+}
+
+[data-reveal="fade"].is-outview {
+  opacity: 0;
+}
+
+/* ============================================
+   Reveal Up
+   ============================================ */
+
+[data-reveal="up"] {
+  transform: translateY(var(--reveal-distance)) translateZ(0);
+  transition: opacity var(--dur-2) var(--ease-2),
+              transform var(--dur-2) var(--ease-2);
+}
+
+[data-reveal="up"].is-inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal="up"].is-outview {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance));
+}
+
+/* ============================================
+   Reveal Down
+   ============================================ */
+
+[data-reveal="down"] {
+  transform: translateY(calc(var(--reveal-distance) * -1)) translateZ(0);
+  transition: opacity var(--dur-2) var(--ease-2),
+              transform var(--dur-2) var(--ease-2);
+}
+
+[data-reveal="down"].is-inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-reveal="down"].is-outview {
+  opacity: 0;
+  transform: translateY(calc(var(--reveal-distance) * -1));
+}
+
+/* ============================================
+   Reveal Left
+   ============================================ */
+
+[data-reveal="left"] {
+  transform: translateX(var(--reveal-distance)) translateZ(0);
+  transition: opacity var(--dur-2) var(--ease-2),
+              transform var(--dur-2) var(--ease-2);
+}
+
+[data-reveal="left"].is-inview {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+[data-reveal="left"].is-outview {
+  opacity: 0;
+  transform: translateX(var(--reveal-distance));
+}
+
+/* ============================================
+   Reveal Right
+   ============================================ */
+
+[data-reveal="right"] {
+  transform: translateX(calc(var(--reveal-distance) * -1)) translateZ(0);
+  transition: opacity var(--dur-2) var(--ease-2),
+              transform var(--dur-2) var(--ease-2);
+}
+
+[data-reveal="right"].is-inview {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+[data-reveal="right"].is-outview {
+  opacity: 0;
+  transform: translateX(calc(var(--reveal-distance) * -1));
+}
+
+/* ============================================
+   Reveal Zoom
+   ============================================ */
+
+[data-reveal="zoom"] {
+  transform: scale(0.85) translateZ(0);
+  transition: opacity var(--dur-2) var(--ease-2),
+              transform var(--dur-2) var(--ease-2);
+}
+
+[data-reveal="zoom"].is-inview {
+  opacity: 1;
+  transform: scale(1);
+}
+
+[data-reveal="zoom"].is-outview {
+  opacity: 0;
+  transform: scale(0.85);
+}
+
+/* ============================================
+   Stagger Effect
+   ============================================ */
+
+[data-stagger] > * {
+  --i: 0;
+  opacity: 0;
+  transform: translateY(var(--reveal-distance)) translateZ(0);
+  transition: opacity var(--dur-2) var(--ease-2),
+              transform var(--dur-2) var(--ease-2);
+  transition-delay: calc(var(--i) * var(--stagger-delay));
+  backface-visibility: hidden;
+}
+
+[data-stagger].is-inview > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-stagger].is-outview > * {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance));
+}
+
+/* Aplicar delay incremental via JavaScript */
+[data-stagger] > *:nth-child(1) { --i: 0; }
+[data-stagger] > *:nth-child(2) { --i: 1; }
+[data-stagger] > *:nth-child(3) { --i: 2; }
+[data-stagger] > *:nth-child(4) { --i: 3; }
+[data-stagger] > *:nth-child(5) { --i: 4; }
+[data-stagger] > *:nth-child(6) { --i: 5; }
+[data-stagger] > *:nth-child(7) { --i: 6; }
+[data-stagger] > *:nth-child(8) { --i: 7; }
+[data-stagger] > *:nth-child(9) { --i: 8; }
+[data-stagger] > *:nth-child(10) { --i: 9; }
+
+/* ============================================
+   Parallax Base
+   ============================================ */
+
+[data-parallax] {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/* Desativar parallax em mobile e reduced motion */
+@media (max-width: 768px), (prefers-reduced-motion: reduce) {
+  [data-parallax] {
+    transform: none !important;
+  }
+}
+
+/* ============================================
+   Performance - Otimizações
+   ============================================ */
+
+/* Evitar repaint durante animações - Desktop */
+@media (min-width: 769px) {
+  [data-reveal],
+  [data-parallax] {
+    contain: layout style paint;
+    /* Acelerar hardware para scroll suave */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+/* Em mobile, usar contain mais leve */
+@media (max-width: 768px) {
+  [data-reveal] {
+    contain: style;
+    transform: translateZ(0);
+  }
+}
+
+/* Limpar will-change após animação (mas manter transform para scroll suave) */
+[data-reveal].is-inview:not(.is-outview) {
+  will-change: auto;
+  /* Manter transform para scroll suave */
+  transform: translateZ(0);
+}
+
+/* Otimização para touch devices */
+@media (hover: none) and (pointer: coarse) {
+  /* Desabilitar hover effects em touch devices */
+  [data-reveal]:hover {
+    transform: none;
+  }
+  
+  /* Reduzir complexidade de animações em touch */
+  [data-reveal="zoom"] {
+    transform: none;
+    transition: opacity var(--dur-2) var(--ease-1);
+  }
+}
+
+/* ============================================
+   Utilitários - Classes Helper
+   ============================================ */
+
+.reveal-fade {
+  opacity: 0;
+  transition: opacity var(--dur-2) var(--ease-1);
+}
+
+.reveal-fade.is-inview {
+  opacity: 1;
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance));
+  transition: opacity var(--dur-2) var(--ease-1),
+              transform var(--dur-2) var(--ease-2);
+}
+
+.reveal-up.is-inview {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(var(--reveal-distance));
+  transition: opacity var(--dur-2) var(--ease-1),
+              transform var(--dur-2) var(--ease-2);
+}
+
+.reveal-left.is-inview {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(calc(var(--reveal-distance) * -1));
+  transition: opacity var(--dur-2) var(--ease-1),
+              transform var(--dur-2) var(--ease-2);
+}
+
+.reveal-right.is-inview {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity var(--dur-2) var(--ease-1),
+              transform var(--dur-2) var(--ease-2);
+}
+
+.reveal-zoom.is-inview {
+  opacity: 1;
+  transform: scale(1);
+}
+
+

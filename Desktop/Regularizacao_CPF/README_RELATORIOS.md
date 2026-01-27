@@ -261,3 +261,5 @@ Calcula o tempo médio entre criação e conclusão de processos, útil para:
 - [ ] Criar relatórios personalizados
 - [ ] Implementar cache para relatórios frequentes
 
+
+

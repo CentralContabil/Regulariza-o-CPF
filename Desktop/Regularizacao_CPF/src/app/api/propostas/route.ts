@@ -38,3 +38,5 @@ export const POST = asyncHandler(async (request: NextRequest) => {
   return NextResponse.json(proposta, { status: 201 })
 })
 
+
+

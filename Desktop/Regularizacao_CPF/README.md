@@ -65,3 +65,5 @@ Este projeto segue as diretrizes de segurança e conformidade com a LGPD (Lei Ge
 
 MIT
 
+
+

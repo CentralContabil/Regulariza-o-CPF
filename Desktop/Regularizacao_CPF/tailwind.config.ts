@@ -10,29 +10,37 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
+          // Verde brasileiro (bandeira)
           50: '#f0fdf4',
           100: '#dcfce7',
           200: '#bbf7d0',
           300: '#86efac',
           400: '#4ade80',
           500: '#22c55e',
-          600: '#16a34a',
+          600: '#16a34a', // Verde principal
           700: '#15803d',
           800: '#166534',
           900: '#14532d',
           950: '#052e16',
         },
         accent: {
-          50: '#ecfdf5',
-          100: '#d1fae5',
-          200: '#a7f3d0',
-          300: '#6ee7b7',
-          400: '#34d399',
-          500: '#10b981',
-          600: '#059669',
-          700: '#047857',
-          800: '#065f46',
-          900: '#064e3b',
+          // Amarelo/Ouro brasileiro (bandeira)
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b', // Amarelo principal
+          600: '#d97706',
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+        },
+        brasil: {
+          verde: '#16a34a', // Verde da bandeira
+          amarelo: '#fbbf24', // Amarelo/Ouro da bandeira
+          verdeEscuro: '#14532d',
+          amareloEscuro: '#d97706',
         },
       },
       fontFamily: {
@@ -40,12 +48,13 @@ const config: Config = {
         display: ['Poppins', 'system-ui', 'sans-serif'],
       },
       animation: {
-        'fade-in': 'fadeIn 0.6s ease-in-out',
-        'slide-up': 'slideUp 0.6s ease-out',
-        'slide-down': 'slideDown 0.6s ease-out',
-        'scale-in': 'scaleIn 0.5s ease-out',
-        'float': 'float 3s ease-in-out infinite',
-        'gradient': 'gradient 8s ease infinite',
+        'fade-in': 'fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+        'slide-up': 'slideUp 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+        'slide-down': 'slideDown 0.8s cubic-bezier(0.4, 0, 0.2, 1)',
+        'scale-in': 'scaleIn 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
+        'float': 'float 4s ease-in-out infinite',
+        'gradient': 'gradient 10s ease infinite',
+        'smooth': 'smooth 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
       },
       keyframes: {
         fadeIn: {
@@ -66,7 +75,7 @@ const config: Config = {
         },
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
+          '50%': { transform: 'translateY(-12px)' },
         },
         gradient: {
           '0%, 100%': {
@@ -77,6 +86,10 @@ const config: Config = {
             'background-size': '200% 200%',
             'background-position': 'right center',
           },
+        },
+        smooth: {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
       backgroundImage: {

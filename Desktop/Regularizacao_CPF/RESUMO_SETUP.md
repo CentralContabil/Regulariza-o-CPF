@@ -115,3 +115,5 @@ npm run db:studio
 
 **Projeto 100% pronto para uso! 🚀**
 
+
+

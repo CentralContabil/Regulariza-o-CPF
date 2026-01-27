@@ -3,8 +3,13 @@
 import { motion } from 'framer-motion'
 import AnimatedSection from './AnimatedSection'
 import ParallaxSection from './ParallaxSection'
+import ModernIcon from './ModernIcon'
 
-export default function Hero() {
+interface HeroProps {
+  onShowForm?: () => void
+}
+
+export default function Hero({ onShowForm }: HeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-green">
       {/* Background com parallax sutil */}
@@ -14,8 +19,8 @@ export default function Hero() {
         </ParallaxSection>
       </div>
 
-      {/* Gradiente animado */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 animate-gradient"></div>
+      {/* Gradiente animado - Verde brasileiro */}
+      <div className="absolute inset-0 gradient-green animate-gradient"></div>
 
       <div className="container-custom relative z-10">
         <div className="max-w-4xl mx-auto text-center">
@@ -46,9 +51,9 @@ export default function Hero() {
               <motion.div
                 className="card-modern bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20"
                 whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ type: 'spring', stiffness: 300 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 20 }}
               >
-                <div className="text-4xl mb-4 animate-float">📋</div>
+                <ModernIcon name="file-check" size="lg" color="white" glow={true} className="mb-4" />
                 <h3 className="font-display font-semibold mb-2 text-white text-lg">
                   Regularização Completa
                 </h3>
@@ -60,11 +65,9 @@ export default function Hero() {
               <motion.div
                 className="card-modern bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20"
                 whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ type: 'spring', stiffness: 300, delay: 0.1 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 0.1 }}
               >
-                <div className="text-4xl mb-4 animate-float" style={{ animationDelay: '0.5s' }}>
-                  🌎
-                </div>
+                <ModernIcon name="globe" size="lg" color="white" glow={true} className="mb-4" animated={true} />
                 <h3 className="font-display font-semibold mb-2 text-white text-lg">
                   Atendimento Remoto
                 </h3>
@@ -76,11 +79,9 @@ export default function Hero() {
               <motion.div
                 className="card-modern bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20"
                 whileHover={{ scale: 1.05, y: -5 }}
-                transition={{ type: 'spring', stiffness: 300, delay: 0.2 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 20, delay: 0.2 }}
               >
-                <div className="text-4xl mb-4 animate-float" style={{ animationDelay: '1s' }}>
-                  🔒
-                </div>
+                <ModernIcon name="shield" size="lg" color="white" glow={true} className="mb-4" animated={true} />
                 <h3 className="font-display font-semibold mb-2 text-white text-lg">
                   Seguro e Confidencial
                 </h3>
@@ -95,7 +96,7 @@ export default function Hero() {
           <AnimatedSection direction="up" delay={0.8}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <motion.a
-                href="https://wa.me/1XXXXXXXXXX"
+                href="https://wa.me/5527981111390"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
@@ -104,34 +105,42 @@ export default function Hero() {
               >
                 Quero meu pré-diagnóstico
               </motion.a>
-              <motion.a
-                href="#formulario"
+              <motion.button
+                type="button"
+                onClick={onShowForm}
                 className="btn-secondary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Preencher formulário
-              </motion.a>
+              </motion.button>
             </div>
           </AnimatedSection>
 
           {/* Microcopy de Confiança */}
           <AnimatedSection direction="fade" delay={1}>
-            <p className="text-sm text-primary-200 mb-4">
-              ✓ Atendimento online especializado • ✓ Sigilo e proteção de dados
-              • ✓ Sem compromisso
-            </p>
+            <div className="text-sm text-primary-200 mb-4 flex items-center justify-center gap-2 flex-wrap">
+              <ModernIcon name="check" size="sm" color="white" glow={false} animated={false} className="inline" />
+              <span>Atendimento online especializado</span>
+              <span>•</span>
+              <ModernIcon name="check" size="sm" color="white" glow={false} animated={false} className="inline" />
+              <span>Sigilo e proteção de dados</span>
+              <span>•</span>
+              <ModernIcon name="check" size="sm" color="white" glow={false} animated={false} className="inline" />
+              <span>Sem compromisso</span>
+            </div>
           </AnimatedSection>
 
           {/* Slogan */}
           <AnimatedSection direction="fade" delay={1.2}>
-            <motion.p
-              className="mt-8 text-lg text-primary-200 italic font-display"
+            <motion.div
+              className="mt-8 text-lg text-primary-200 italic font-display flex items-center justify-center gap-2"
               animate={{ opacity: [0.7, 1, 0.7] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              P.S.: Regularize a sua vida com o Leão 🦁
-            </motion.p>
+              <span>P.S.: Regularize a sua vida com o Leão</span>
+              <ModernIcon name="target" size="sm" color="white" glow={true} animated={true} className="inline" />
+            </motion.div>
           </AnimatedSection>
         </div>
       </div>

@@ -261,3 +261,5 @@ LGPD_ENCRYPTION_KEY=your-encryption-key
 - ✅ Proteção de dados sensíveis
 - ✅ Política de privacidade (a ser implementada no frontend)
 
+
+

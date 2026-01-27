@@ -35,3 +35,5 @@ Write-Host "3. Execute: npm run db:migrate"
 Write-Host "4. Execute: npm run dev"
 Write-Host ""
 
+
+

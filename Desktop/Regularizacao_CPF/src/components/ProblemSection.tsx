@@ -2,6 +2,7 @@
 
 import AnimatedSection from './AnimatedSection'
 import { motion } from 'framer-motion'
+import ModernIcon from './ModernIcon'
 
 export default function ProblemSection() {
   const consequences = [
@@ -17,10 +18,10 @@ export default function ProblemSection() {
 
   return (
     <section className="py-20 lg:py-32 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-      {/* Background decorativo */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-primary-200 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-200 rounded-full blur-3xl"></div>
+      {/* Background decorativo - Verde brasileiro */}
+      <div className="absolute inset-0 opacity-8">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-primary-300 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-300 rounded-full blur-3xl animate-float" style={{ animationDelay: '0.5s' }}></div>
       </div>
 
       <div className="container-custom relative z-10">
@@ -56,9 +57,14 @@ export default function ProblemSection() {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <span className="text-red-500 mr-4 text-2xl font-bold group-hover:scale-110 transition-transform">
-                      ✗
-                    </span>
+                    <ModernIcon 
+                      name="x" 
+                      size="md" 
+                      color="primary" 
+                      glow={false} 
+                      animated={false}
+                      className="mr-4 flex-shrink-0 group-hover:scale-110"
+                    />
                     <span className="text-gray-700 text-lg leading-relaxed group-hover:text-gray-900 transition-colors">
                       {consequence}
                     </span>

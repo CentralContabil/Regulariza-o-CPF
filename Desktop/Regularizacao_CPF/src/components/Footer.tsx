@@ -1,4 +1,8 @@
-export default function Footer() {
+interface FooterProps {
+  onShowForm?: () => void
+}
+
+export default function Footer({ onShowForm }: FooterProps) {
   return (
     <footer className="bg-gray-900 text-gray-300 py-12">
       <div className="container-custom">
@@ -23,9 +27,13 @@ export default function Footer() {
               <h3 className="text-white font-semibold mb-4">Informações</h3>
               <ul className="text-sm space-y-2">
                 <li>
-                  <a href="#formulario" className="hover:text-white">
+                  <button
+                    type="button"
+                    onClick={onShowForm}
+                    className="hover:text-white text-left"
+                  >
                     Pré-diagnóstico
-                  </a>
+                  </button>
                 </li>
                 <li>
                   <a href="#como-funciona" className="hover:text-white">
@@ -73,4 +81,5 @@ export default function Footer() {
     </footer>
   )
 }
+
 

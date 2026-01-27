@@ -3,13 +3,17 @@
 import AnimatedSection from './AnimatedSection'
 import { motion } from 'framer-motion'
 
-export default function FinalCTASection() {
+interface FinalCTASectionProps {
+  onShowForm?: () => void
+}
+
+export default function FinalCTASection({ onShowForm }: FinalCTASectionProps) {
   return (
     <section className="py-20 lg:py-32 gradient-green relative overflow-hidden">
-      {/* Background decorativo */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-200 rounded-full blur-3xl"></div>
+      {/* Background decorativo - Verde brasileiro com toques de amarelo */}
+      <div className="absolute inset-0 opacity-15">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-primary-400 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-400 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
       </div>
 
       <div className="container-custom relative z-10">
@@ -31,7 +35,7 @@ export default function FinalCTASection() {
           <AnimatedSection direction="up" delay={0.6}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
               <motion.a
-                href="https://wa.me/1XXXXXXXXXX"
+                href="https://wa.me/5527981111390"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
@@ -40,14 +44,15 @@ export default function FinalCTASection() {
               >
                 Falar com especialista no WhatsApp
               </motion.a>
-              <motion.a
-                href="#formulario"
+              <motion.button
+                type="button"
+                onClick={onShowForm}
                 className="btn-secondary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Preencher formulário
-              </motion.a>
+              </motion.button>
             </div>
           </AnimatedSection>
 
@@ -55,7 +60,7 @@ export default function FinalCTASection() {
             <motion.div
               className="bg-white/10 backdrop-blur-md rounded-2xl p-6 md:p-8 max-w-2xl mx-auto border border-white/20"
               whileHover={{ scale: 1.02 }}
-              transition={{ type: 'spring', stiffness: 300 }}
+              transition={{ type: 'spring', stiffness: 200, damping: 20 }}
             >
               <h3 className="font-display font-semibold mb-3 text-lg text-white">
                 Ainda não está pronto?
@@ -65,13 +70,14 @@ export default function FinalCTASection() {
                 fazer&quot;
               </p>
               <motion.a
-                href="#lead-magnet"
+                href="/lead-magnet/guia-regularizacao-cpf.pdf"
+                download="Guia Prático Regularização CPF.pdf"
                 className="inline-block btn-outline border-white text-white hover:bg-white hover:text-primary-700"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Baixar guia gratuito
-              </motion.a>
+              </motion.a>              
             </motion.div>
           </AnimatedSection>
         </div>

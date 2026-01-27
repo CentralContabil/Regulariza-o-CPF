@@ -23,3 +23,5 @@ export const POST = asyncHandler(async (request: NextRequest) => {
   return NextResponse.json(resultado)
 })
 
+
+

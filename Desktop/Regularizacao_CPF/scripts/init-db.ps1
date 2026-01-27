@@ -37,3 +37,5 @@ Write-Host "Para visualizar o banco de dados, execute:" -ForegroundColor Cyan
 Write-Host "npm run db:studio" -ForegroundColor White
 Write-Host ""
 
+
+

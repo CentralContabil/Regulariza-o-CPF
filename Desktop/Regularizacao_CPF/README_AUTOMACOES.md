@@ -181,3 +181,5 @@ Os cron jobs registram logs no console:
 - [ ] Adicionar personalização de templates
 - [ ] Implementar testes automatizados
 
+
+

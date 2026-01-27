@@ -30,17 +30,21 @@
     @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
   }
 
-  /* Botões modernos e destacados */
+  /* Botões modernos e destacados - Cores brasileiras */
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-primary-500/50 hover:shadow-xl hover:shadow-primary-500/60 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1;
+    @apply bg-gradient-to-r from-primary-600 to-primary-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-primary-500/50 hover:shadow-xl hover:shadow-primary-500/60 transition-all duration-500 ease-out transform hover:scale-105 hover:-translate-y-1;
   }
 
   .btn-secondary {
-    @apply bg-white text-primary-700 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-2 border-primary-200 hover:border-primary-400;
+    @apply bg-white text-primary-700 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-500 ease-out transform hover:scale-105 border-2 border-primary-200 hover:border-primary-400;
   }
 
   .btn-outline {
-    @apply border-2 border-primary-600 text-primary-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary-600 hover:text-white transition-all duration-300 transform hover:scale-105;
+    @apply border-2 border-primary-600 text-primary-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-primary-600 hover:text-white transition-all duration-500 ease-out transform hover:scale-105;
+  }
+
+  .btn-brasil {
+    @apply bg-gradient-to-r from-accent-400 to-accent-500 text-primary-900 px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-accent-500/50 hover:shadow-xl hover:shadow-accent-500/60 transition-all duration-500 ease-out transform hover:scale-105 hover:-translate-y-1;
   }
 
   /* Efeito parallax sutil */
@@ -49,18 +53,28 @@
     background-attachment: fixed;
   }
 
-  /* Gradientes modernos */
+  /* Gradientes modernos - Inspirados na bandeira brasileira */
   .gradient-green {
-    background: linear-gradient(to bottom right, rgb(34 197 94), rgb(22 163 74), rgb(21 128 61));
+    background: linear-gradient(135deg, rgb(22 163 74) 0%, rgb(21 128 61) 50%, rgb(20 83 45) 100%);
+    background-size: 200% 200%;
+    animation: gradient 15s ease infinite;
   }
 
   .gradient-green-light {
-    background: linear-gradient(to bottom right, rgb(240 253 244), rgb(236 253 245), rgb(220 252 231));
+    background: linear-gradient(135deg, rgb(240 253 244) 0%, rgb(236 253 245) 50%, rgb(220 252 231) 100%);
   }
 
-  /* Cards com hover effect */
+  .gradient-brasil {
+    background: linear-gradient(135deg, rgb(22 163 74) 0%, rgb(251 191 36) 50%, rgb(217 119 6) 100%);
+  }
+
+  .gradient-brasil-soft {
+    background: linear-gradient(135deg, rgb(240 253 244) 0%, rgb(255 251 235) 50%, rgb(254 243 199) 100%);
+  }
+
+  /* Cards com hover effect - Mais fluido */
   .card-modern {
-    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2;
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 ease-out transform hover:-translate-y-2;
   }
 
   /* Animações suaves */
@@ -70,6 +84,66 @@
 
   .animate-on-scroll.visible {
     @apply opacity-100 translate-y-0;
+  }
+
+  /* Efeitos robustos para ícones */
+  .icon-glow {
+    filter: drop-shadow(0 0 10px rgba(34, 197, 94, 0.5)) drop-shadow(0 0 20px rgba(34, 197, 94, 0.3));
+  }
+
+  .icon-glow-strong {
+    filter: drop-shadow(0 0 15px rgba(34, 197, 94, 0.7)) drop-shadow(0 0 30px rgba(34, 197, 94, 0.5)) drop-shadow(0 0 45px rgba(34, 197, 94, 0.3));
+  }
+
+  .icon-gradient {
+    background: linear-gradient(135deg, rgb(34 197 94) 0%, rgb(22 163 74) 50%, rgb(21 128 61) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Efeitos de hover robustos */
+  .hover-lift {
+    @apply transition-all duration-500 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply transform -translate-y-2 scale-105;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.15));
+  }
+
+  /* Efeito de brilho animado */
+  .shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+  }
+
+  /* Animação de entrada do formulário */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 

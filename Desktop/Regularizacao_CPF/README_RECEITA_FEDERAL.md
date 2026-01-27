@@ -142,3 +142,5 @@ Isso reduz chamadas desnecessárias e melhora performance.
 5. Adicionar tratamento de erros específicos
 6. Implementar retry logic para falhas temporárias
 
+
+

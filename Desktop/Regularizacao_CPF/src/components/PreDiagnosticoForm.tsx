@@ -196,7 +196,13 @@ export default function PreDiagnosticoForm() {
   }
 
   return (
-    <section id="formulario" className="py-20 bg-gray-50">
+    <section 
+      id="formulario" 
+      className="py-20 bg-gray-50"
+      style={{
+        animation: 'fadeInUp 0.5s ease-out',
+      }}
+    >
       <div className="container-custom">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-center mb-4 text-gray-900">

@@ -209,3 +209,5 @@ function ProgressoBar({ progresso }: { progresso: number }) {
 - [ ] Criar área de pagamentos
 - [ ] Implementar histórico completo de transações
 
+
+

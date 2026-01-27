@@ -279,3 +279,5 @@ function ReceitaChart() {
 - [ ] Implementar gráficos interativos
 - [ ] Adicionar comparação com períodos anteriores
 
+
+

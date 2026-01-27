@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import ModernIcon from './ModernIcon'
 
 export default function LeadMagnetForm() {
   const [email, setEmail] = useState('')
@@ -57,7 +58,7 @@ export default function LeadMagnetForm() {
   return (
     <div className="bg-white rounded-lg shadow-lg p-8 max-w-md mx-auto">
       <div className="text-center mb-6">
-        <div className="text-5xl mb-4">📋</div>
+        <ModernIcon name="document" size="xl" color="primary" glow={true} gradient={true} className="mb-4 mx-auto" />
         <h2 className="text-2xl font-bold text-gray-800 mb-2">
           Baixe Grátis!
         </h2>
@@ -79,7 +80,7 @@ export default function LeadMagnetForm() {
             id="nome"
             value={nome}
             onChange={(e) => setNome(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-2 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
             placeholder="Seu nome"
           />
         </div>
@@ -97,7 +98,7 @@ export default function LeadMagnetForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            className="w-full px-4 py-2 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all"
             placeholder="seu@email.com"
           />
         </div>
@@ -111,7 +112,7 @@ export default function LeadMagnetForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full bg-yellow-400 text-blue-900 font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-gradient-to-r from-accent-400 to-accent-500 text-primary-900 font-bold py-3 px-6 rounded-xl hover:from-accent-500 hover:to-accent-600 transition-all duration-300 transform hover:scale-105 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
         >
           {loading ? 'Enviando...' : '📥 Baixar Checklist Grátis'}
         </button>

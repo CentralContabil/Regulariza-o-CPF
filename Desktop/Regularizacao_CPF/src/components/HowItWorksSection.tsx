@@ -2,6 +2,8 @@
 
 import AnimatedSection from './AnimatedSection'
 import { motion } from 'framer-motion'
+import ModernIcon from './ModernIcon'
+import { CheckCircle2 } from 'lucide-react'
 
 export default function HowItWorksSection() {
   const steps = [
@@ -58,9 +60,10 @@ export default function HowItWorksSection() {
 
   return (
     <section className="py-20 lg:py-32 bg-white relative overflow-hidden">
-      {/* Background decorativo */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-300 rounded-full blur-3xl"></div>
+      {/* Background decorativo - Verde brasileiro */}
+      <div className="absolute inset-0 opacity-8">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-300 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-200 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="container-custom relative z-10">
@@ -85,15 +88,28 @@ export default function HowItWorksSection() {
                 <motion.div
                   className="card-modern bg-gradient-to-r from-white to-gray-50 rounded-2xl p-6 md:p-8 border-l-4 border-primary-500 shadow-lg"
                   whileHover={{ x: 10, scale: 1.02 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
+                  transition={{ type: 'spring', stiffness: 200, damping: 20 }}
                 >
                   <div className="flex items-start gap-6">
                     <motion.div
-                      className="flex-shrink-0 w-14 h-14 gradient-green text-white rounded-full flex items-center justify-center font-display font-bold text-xl shadow-lg"
-                      whileHover={{ rotate: 360, scale: 1.1 }}
-                      transition={{ duration: 0.5 }}
+                      className="flex-shrink-0 w-14 h-14 gradient-green text-white rounded-full flex items-center justify-center font-display font-bold text-xl shadow-lg relative overflow-hidden"
+                      whileHover={{ rotate: 360, scale: 1.15 }}
+                      transition={{ type: 'spring', stiffness: 200, damping: 15 }}
                     >
-                      {item.step}
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                      <span className="relative z-10">{item.step}</span>
+                      <motion.div
+                        className="absolute inset-0 bg-primary-400/30 rounded-full blur-xl"
+                        animate={{
+                          scale: [1, 1.3, 1],
+                          opacity: [0.3, 0.6, 0.3],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: 'easeInOut',
+                        }}
+                      />
                     </motion.div>
                     <div className="flex-grow">
                       <h3 className="text-xl md:text-2xl font-display font-semibold mb-3 text-gray-900">
@@ -102,9 +118,12 @@ export default function HowItWorksSection() {
                       <p className="text-gray-700 mb-4 text-lg leading-relaxed">
                         {item.description}
                       </p>
-                      <p className="text-sm text-primary-700 bg-primary-50 px-4 py-2 rounded-lg inline-block font-medium border border-primary-200">
-                        <strong>Você precisa:</strong> {item.clientNeeds}
-                      </p>
+                      <div className="flex items-center gap-2 mt-2">
+                        <ModernIcon name="check" size="sm" color="primary" glow={false} animated={false} />
+                        <p className="text-sm text-primary-700 bg-primary-50 px-4 py-2 rounded-lg inline-block font-medium border border-primary-200">
+                          <strong>Você precisa:</strong> {item.clientNeeds}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </motion.div>

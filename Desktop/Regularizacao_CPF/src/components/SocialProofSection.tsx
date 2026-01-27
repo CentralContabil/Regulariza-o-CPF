@@ -1,3 +1,7 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
 export default function SocialProofSection() {
   const testimonials = [
     {
@@ -75,7 +79,7 @@ export default function SocialProofSection() {
                 className="bg-gray-50 rounded-lg p-6 border border-gray-200"
               >
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center font-semibold mr-3">
+                  <div className="w-10 h-10 bg-primary-100 text-primary-700 rounded-full flex items-center justify-center font-semibold text-sm mr-3">
                     {testimonial.initials}
                   </div>
                   <div>

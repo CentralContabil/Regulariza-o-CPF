@@ -29,3 +29,5 @@ export const POST = asyncHandler(async (request: NextRequest) => {
   return NextResponse.json(cliente, { status: 201 })
 })
 
+
+

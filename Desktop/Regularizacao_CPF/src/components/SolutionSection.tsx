@@ -2,14 +2,15 @@
 
 import AnimatedSection from './AnimatedSection'
 import { motion } from 'framer-motion'
+import ModernIcon from './ModernIcon'
 
 export default function SolutionSection() {
   return (
-    <section className="py-20 lg:py-32 gradient-green-light relative overflow-hidden">
-      {/* Background decorativo */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-300 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-300 rounded-full blur-3xl"></div>
+    <section className="py-20 lg:py-32 gradient-brasil-soft relative overflow-hidden">
+      {/* Background decorativo - Verde e amarelo brasileiro */}
+      <div className="absolute inset-0 opacity-15">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary-400 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-400 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
       </div>
 
       <div className="container-custom relative z-10">
@@ -33,7 +34,7 @@ export default function SolutionSection() {
               <motion.div
                 className="card-modern bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
                 whileHover={{ y: -5 }}
-                transition={{ type: 'spring', stiffness: 300 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 20 }}
               >
                 <h3 className="text-2xl md:text-3xl font-display font-semibold mb-6 text-gray-900">
                   O que fazemos
@@ -53,9 +54,14 @@ export default function SolutionSection() {
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
                     >
-                      <span className="text-primary-600 mr-4 text-2xl font-bold flex-shrink-0">
-                        ✓
-                      </span>
+                      <ModernIcon 
+                        name="check" 
+                        size="sm" 
+                        color="primary" 
+                        glow={true}
+                        animated={false}
+                        className="mr-4 flex-shrink-0"
+                      />
                       <span className="text-gray-700 text-lg leading-relaxed">{item}</span>
                     </motion.li>
                   ))}
@@ -67,7 +73,7 @@ export default function SolutionSection() {
               <motion.div
                 className="card-modern bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
                 whileHover={{ y: -5 }}
-                transition={{ type: 'spring', stiffness: 300 }}
+                transition={{ type: 'spring', stiffness: 200, damping: 20 }}
               >
                 <h3 className="text-2xl md:text-3xl font-display font-semibold mb-6 text-gray-900">
                   O que você recebe
@@ -88,9 +94,14 @@ export default function SolutionSection() {
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
                     >
-                      <span className="text-primary-600 mr-4 text-2xl font-bold flex-shrink-0">
-                        ✓
-                      </span>
+                      <ModernIcon 
+                        name="check" 
+                        size="sm" 
+                        color="primary" 
+                        glow={true}
+                        animated={false}
+                        className="mr-4 flex-shrink-0"
+                      />
                       <span className="text-gray-700 text-lg leading-relaxed">{item}</span>
                     </motion.li>
                   ))}
@@ -115,17 +126,25 @@ export default function SolutionSection() {
               </p>
               <div className="grid md:grid-cols-3 gap-6 text-left">
                 {[
-                  { icon: '1️⃣', title: 'Diagnóstico', desc: 'Análise completa da sua situação' },
-                  { icon: '2️⃣', title: 'Organização', desc: 'Coleta e organização de documentos' },
-                  { icon: '3️⃣', title: 'Regularização', desc: 'Entrega e acompanhamento na RFB' },
+                  { icon: 'file-check', title: 'Diagnóstico', desc: 'Análise completa da sua situação' },
+                  { icon: 'folder', title: 'Organização', desc: 'Coleta e organização de documentos' },
+                  { icon: 'check', title: 'Regularização', desc: 'Entrega e acompanhamento na RFB' },
                 ].map((step, index) => (
                   <motion.div
                     key={index}
                     className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20"
                     whileHover={{ scale: 1.05, y: -5 }}
-                    transition={{ type: 'spring', stiffness: 300 }}
+                    transition={{ type: 'spring', stiffness: 200, damping: 20 }}
                   >
-                    <div className="text-4xl mb-3">{step.icon}</div>
+                    <ModernIcon 
+                      name={step.icon} 
+                      size="lg" 
+                      color="white" 
+                      glow={true}
+                      gradient={true}
+                      animated={true}
+                      className="mb-3"
+                    />
                     <h4 className="font-display font-semibold mb-2 text-lg">{step.title}</h4>
                     <p className="text-primary-100 text-sm leading-relaxed">{step.desc}</p>
                   </motion.div>

@@ -35,3 +35,5 @@ echo "3. Execute: npm run db:migrate"
 echo "4. Execute: npm run dev"
 echo ""
 
+
+

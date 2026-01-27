@@ -51,9 +51,9 @@ export default function AnimatedSection({
       animate={inView ? 'visible' : 'hidden'}
       variants={variants[direction]}
       transition={{
-        duration: 0.6,
+        duration: 0.8,
         delay,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.25, 0.46, 0.45, 0.94], // easeOutQuad - mais fluido
       }}
       className={className}
     >

@@ -29,3 +29,5 @@ export const GET = asyncHandler(async (request: NextRequest) => {
   return NextResponse.json(result)
 })
 
+
+

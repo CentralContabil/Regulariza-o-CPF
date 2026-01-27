@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { Plus, Minus } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 interface FAQItem {
   question: string
@@ -121,9 +123,17 @@ export default function FAQSection() {
                   <span className="font-semibold text-gray-900 pr-4">
                     {faq.question}
                   </span>
-                  <span className="text-primary-600 text-2xl flex-shrink-0">
-                    {openIndex === index ? '−' : '+'}
-                  </span>
+                  <motion.div
+                    animate={{ rotate: openIndex === index ? 45 : 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="flex-shrink-0"
+                  >
+                    {openIndex === index ? (
+                      <Minus className="w-6 h-6 text-primary-600" strokeWidth={2.5} />
+                    ) : (
+                      <Plus className="w-6 h-6 text-primary-600" strokeWidth={2.5} />
+                    )}
+                  </motion.div>
                 </button>
                 {openIndex === index && (
                   <div className="px-6 pb-6">
