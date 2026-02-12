@@ -2,12 +2,23 @@
 
 import AnimatedSection from './AnimatedSection'
 import { motion } from 'framer-motion'
+import { useContent } from '@/hooks/useContent'
 
 interface FinalCTASectionProps {
   onShowForm?: () => void
 }
 
 export default function FinalCTASection({ onShowForm }: FinalCTASectionProps) {
+  const { content } = useContent()
+  
+  const ctaContent = content?.finalCta || {
+    title: 'Pronto para regularizar sua',
+    highlight: 'situação fiscal?',
+    subtitle: 'Comece agora com um pré-diagnóstico gratuito e descubra o caminho para regularizar seu CPF e IRPF',
+    ctaPrimary: 'Falar com especialista no WhatsApp',
+    ctaSecondary: 'Preencher formulário',
+  }
+
   return (
     <section className="py-20 lg:py-32 gradient-green relative overflow-hidden">
       {/* Background decorativo - Verde brasileiro com toques de amarelo */}
@@ -20,15 +31,14 @@ export default function FinalCTASection({ onShowForm }: FinalCTASectionProps) {
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection direction="down" delay={0.2}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 text-white">
-              Pronto para regularizar sua{' '}
-              <span className="text-primary-200">situação fiscal?</span>
+              {ctaContent.title}{' '}
+              <span className="text-primary-200">{ctaContent.highlight}</span>
             </h2>
           </AnimatedSection>
 
           <AnimatedSection direction="up" delay={0.4}>
             <p className="text-xl md:text-2xl mb-8 text-primary-100 leading-relaxed">
-              Comece agora com um pré-diagnóstico gratuito e descubra o caminho
-              para regularizar seu CPF e IRPF
+              {ctaContent.subtitle}
             </p>
           </AnimatedSection>
 
@@ -42,7 +52,7 @@ export default function FinalCTASection({ onShowForm }: FinalCTASectionProps) {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Falar com especialista no WhatsApp
+                {ctaContent.ctaPrimary}
               </motion.a>
               <motion.button
                 type="button"
@@ -51,7 +61,7 @@ export default function FinalCTASection({ onShowForm }: FinalCTASectionProps) {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Preencher formulário
+                {ctaContent.ctaSecondary}
               </motion.button>
             </div>
           </AnimatedSection>

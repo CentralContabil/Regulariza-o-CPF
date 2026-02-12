@@ -4,12 +4,24 @@ import { motion } from 'framer-motion'
 import AnimatedSection from './AnimatedSection'
 import ParallaxSection from './ParallaxSection'
 import ModernIcon from './ModernIcon'
+import { useContent } from '@/hooks/useContent'
 
 interface HeroProps {
   onShowForm?: () => void
 }
 
 export default function Hero({ onShowForm }: HeroProps) {
+  const { content } = useContent()
+  
+  const heroContent = content?.hero || {
+    title: 'Regularize seu CPF e seu IRPF no Brasil',
+    highlight: 'morando nos EUA',
+    subtitle: 'Entrega/retificação dos últimos 5 exercícios, orientação de Saída Definitiva (quando aplicável) e rotina anual no prazo.',
+    ctaPrimary: 'Quero meu pré-diagnóstico',
+    ctaSecondary: 'Preencher formulário',
+    slogan: 'P.S.: Regularize a sua vida com o Leão',
+  }
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-green">
       {/* Background com parallax sutil */}
@@ -32,16 +44,15 @@ export default function Hero({ onShowForm }: HeroProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              Regularize seu CPF e seu IRPF no Brasil{' '}
-              <span className="text-primary-200">morando nos EUA</span>
+              {heroContent.title}{' '}
+              <span className="text-primary-200">{heroContent.highlight}</span>
             </motion.h1>
           </AnimatedSection>
 
           {/* Subheadline */}
           <AnimatedSection direction="up" delay={0.4}>
             <p className="text-xl md:text-2xl mb-12 text-primary-100 font-light leading-relaxed">
-              Entrega/retificação dos últimos 5 exercícios, orientação de Saída
-              Definitiva (quando aplicável) e rotina anual no prazo.
+              {heroContent.subtitle}
             </p>
           </AnimatedSection>
 
@@ -103,7 +114,7 @@ export default function Hero({ onShowForm }: HeroProps) {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Quero meu pré-diagnóstico
+                {heroContent.ctaPrimary}
               </motion.a>
               <motion.button
                 type="button"
@@ -112,7 +123,7 @@ export default function Hero({ onShowForm }: HeroProps) {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Preencher formulário
+                {heroContent.ctaSecondary}
               </motion.button>
             </div>
           </AnimatedSection>
@@ -138,7 +149,7 @@ export default function Hero({ onShowForm }: HeroProps) {
               animate={{ opacity: [0.7, 1, 0.7] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
-              <span>P.S.: Regularize a sua vida com o Leão</span>
+              <span>{heroContent.slogan}</span>
               <ModernIcon name="target" size="sm" color="white" glow={true} animated={true} className="inline" />
             </motion.div>
           </AnimatedSection>

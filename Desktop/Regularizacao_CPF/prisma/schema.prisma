@@ -2,7 +2,9 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider   = "prisma-client"
+  output     = "./generated/prisma"
+  engineType = "client"
 }
 
 datasource db {
@@ -175,4 +177,13 @@ model LeadMagnet {
   createdAt         DateTime  @default(now())
 
   @@map("lead_magnet")
+}
+
+model LandingPageContent {
+  id        String   @id @default(cuid())
+  section   String   @unique // hero, problem, education, solution, etc.
+  content   Json     // Conteúdo dinâmico da seção
+  updatedAt DateTime @updatedAt
+
+  @@map("landing_page_content")
 }
